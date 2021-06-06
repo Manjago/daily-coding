@@ -1,8 +1,8 @@
 import java.util.Objects;
 
 /*
-Из строки надо удалить смайлики :-), :-), :-)))))), :-(((((( и тому подобное
-Можно сделать конечным автоматом, но это очень сложно, легко набажить
+Remove emoticons  :-), :-), :-)))))),: - ((((((( and the like from the line.
+It can be made a state machine, but it is very difficult, easy to make bugs 
  */
 
 public class Solution20210606 {
@@ -60,7 +60,7 @@ public class Solution20210606 {
         if (src.charAt(i) == ':' && src.charAt(i + 1) == '-' &&
                 (src.charAt(i+2) == '(' || src.charAt(i+2) == ')')
         ) {
-            // смайлик нашли, надо его докрутить
+            // we found a smiley, try to extend
             result = i + 3;
             if (result >= src.length()) {
                 return -1;
