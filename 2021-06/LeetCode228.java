@@ -53,7 +53,11 @@ class Solution {
         if (left == right) {
             result.add(Integer.toString(left));
         } else {
-            result.add("" + left + "->" + right);
+            final StringBuilder sb = new StringBuilder();
+            sb.append(left);
+            sb.append("->");
+            sb.append(right);
+            result.add(sb.toString());
         }
     }
 }
